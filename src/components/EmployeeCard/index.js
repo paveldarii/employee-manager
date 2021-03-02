@@ -1,28 +1,31 @@
 import React from "react";
 import "./style.css";
+import SpringModal from "../SpringModal";
 
 function EmployeeCard(props) {
   return (
-    <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
+    <div>
+      <div class="bg-white card rounded shadow-sm py-5 px-4">
+        <img
+          src={props.image}
+          alt={props.name}
+          width="100"
+          class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm "
+        ></img>
+
+        <h5 class="mb-0">{props.name}</h5>
+        <span class="small text-uppercase ">{props.occupation}</span>
+        <p>{`${props.city}, ${props.country}`}</p>
+
+        <SpringModal
+          image={props.image}
+          name={props.name}
+          occupation={props.occupation}
+          location={props.location}
+          email={props.email}
+          phone={props.phone}
+        ></SpringModal>
       </div>
-      <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Occupation:</strong> {props.occupation}
-          </li>
-          <li>
-            <strong>Location:</strong> {props.location}
-          </li>
-        </ul>
-      </div>
-      <span onClick={() => props.removeEmployee(props.id)} className="remove">
-        𝘅
-      </span>
     </div>
   );
 }
