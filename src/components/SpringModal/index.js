@@ -66,7 +66,7 @@ export default function SpringModal(props) {
 
   return (
     <div>
-      <button type="button" class="btn btn-info" onClick={handleOpen}>
+      <button type="button" className="btn btn-info" onClick={handleOpen}>
         More Info...
       </button>
       <Modal
