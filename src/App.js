@@ -9,8 +9,21 @@ class App extends Component {
   // Setting this.state.employees to the employees json array
   state = {
     employees,
+    currentNavItem: "",
   };
 
+  handleNavItemChange = (navItem) => {
+    this.setState({ currentNavItem: navItem });
+  };
+  renderSearchSection = () => {
+    if (this.state.currentNavItem === "Sort By") {
+      return <p>Sort by</p>;
+    } else if (this.state.currentNavItem === "Filter By") {
+      return <p>Filter by</p>;
+    } else {
+      return "";
+    }
+  };
   removeEmployee = (id) => {
     // Filter this.state.emmployees for employees with an id not equal to the id being removed
     const employees = this.state.employees.filter(
@@ -23,7 +36,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar></Navbar>
+        <Navbar
+          currentNavItem={this.state.currentNavItem}
+          handleNavItemChange={this.handleNavItemChange}
+        ></Navbar>
+        {this.renderSearchSection()}
         <Wrapper>
           {this.state.employees.map((employee) => (
             <EmployeeCard
