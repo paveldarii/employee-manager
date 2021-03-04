@@ -6,8 +6,11 @@ div > .col-sm-4,
   margin-right: 20px;
 }
 #profile-img-large {
-  width: 80%;
+  width: 100%;
   overflow: hidden;
   text-align: center;
   background: #6caddc;
+}
+#pop-up-card {
+  height: 100%;
 }
