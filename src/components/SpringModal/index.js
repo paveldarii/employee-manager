@@ -82,29 +82,25 @@ export default function SpringModal(props) {
         }}
       >
         <Fade in={open}>
-          <div className="row">
-            <div className="col-sm-4 offset-sm-1 ">
-              <img id="profile-img-large" alt={props.name} src={props.image} />
+          <div className="card" id="pop-up-card">
+            <img id="profile-img-large" alt={props.name} src={props.image} />
+            <div className="card-body">
+              <h5 className="card-title">{props.name}</h5>
             </div>
-            <div className="col-sm-5">
-              <ul>
-                <li>
-                  <strong>Name:</strong> {props.name}
-                </li>
-                <li>
-                  <strong>Occupation:</strong> {props.occupation}
-                </li>
-                <li>
-                  <strong>Phone Number:</strong> {props.phone}
-                </li>
-                <li>
-                  <strong>Email Address:</strong> {props.email}
-                </li>
-                <li>
-                  <strong>Location:</strong> {props.location}
-                </li>
-              </ul>
-            </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">
+                <strong>Job:</strong> {props.occupation}
+              </li>
+              <li className="list-group-item">
+                <strong>Phone Number:</strong> {props.phone}
+              </li>
+              <li className="list-group-item">
+                <strong>Email Address:</strong> {props.email}
+              </li>
+              <li className="list-group-item">
+                <strong>Location:</strong> {props.location}
+              </li>
+            </ul>
           </div>
         </Fade>
       </Modal>
