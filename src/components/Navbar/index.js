@@ -17,17 +17,14 @@ function Navbar(props) {
         >
           Filter By
         </li>
-        <li className="nav-item">
-          <a
-            onClick={() => props.handleNavItemChange("Sort By")}
-            className={
-              props.currentNavItem === "Sort By"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Sort By
-          </a>
+        <li
+          className="nav-item"
+          onClick={() => props.handleNavItemChange("Sort By")}
+          className={
+            props.currentNavItem === "Sort By" ? "nav-link active" : "nav-link"
+          }
+        >
+          Sort By
         </li>
       </ul>
     </nav>
