@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import SpringModal from "../SpringModal";
+import PupUpCard from "../PupUpCard";
 
 function EmployeeCard(props) {
   return (
@@ -17,14 +17,14 @@ function EmployeeCard(props) {
           <span className="small text-uppercase ">{props.occupation}</span>
           <p>{`${props.city}, ${props.country}`}</p>
 
-          <SpringModal
+          <PupUpCard
             image={props.image}
             name={props.name}
             occupation={props.occupation}
             location={props.location}
             email={props.email}
             phone={props.phone}
-          ></SpringModal>
+          ></PupUpCard>
         </div>
       </div>
     </div>
