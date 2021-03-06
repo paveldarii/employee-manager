@@ -2,62 +2,66 @@ import React, { Component } from "react";
 import EmployeeCard from "./components/EmployeeCard";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
-import SortByForm from "./components/SortByForm";
+import SortForm from "./components/SortForm";
+import FilterForm from "./components/FilterForm";
 import employees from "./new-employees.json";
+import employeesTest from "./employee-test.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
   state = {
-    employees,
-    currentNavItem: "",
-    currentSortItem: "",
+    employees: employees,
+    currentNavStatus: "",
+    sortFormState: "",
   };
 
   handleSortByChange = (sortItem) => {
-    this.setState({ currentSortItem: sortItem });
+    this.setState({ sortFormState: sortItem });
   };
 
-  handleNavItemChange = (navItem) => {
-    this.setState({ currentNavItem: navItem });
+  handleNavStatus = (status) => {
+    this.setState({ currentNavStatus: status });
   };
   renderSearchSection = () => {
-    if (this.state.currentNavItem === "Sort By") {
+    if (this.state.currentNavStatus === "sort") {
       return (
-        <SortByForm handleSortByChange={this.handleSortByChange()}></SortByForm>
+        <SortForm renderSortedEmployee={this.renderSortedEmployee}></SortForm>
       );
-    } else if (this.state.currentNavItem === "Filter By") {
-      return <p>Filter by</p>;
-    } else {
+    } else if (this.state.currentNavStatus === "filter") {
+      return <FilterForm></FilterForm>;
+    } else if (this.state.currentNavStatus === "") {
       return "";
     }
   };
-
-  sortBy = () => {
-    if (this.state.currentSortItem === "Name") {
-      this.state.employee.sort();
-      // Set this.state.employees equal to the new employees array
-      this.setState({ employees });
-    } else if (this.state.currentSortItem === "Years of Experience") {
-      return;
+  renderSortedEmployee = (sortItem) => {
+    if (sortItem === "age") {
+      this.setState({ employees: employeesTest });
+    } else if (sortItem === "experience") {
+      this.setState({ employees: employeesTest });
+    } else if (sortItem === "name") {
+      this.setState({ employees: employeesTest });
     } else {
-      this.state.employees.map((employee) => (
-        <EmployeeCard
-          removeEmployee={this.removeEmployee}
-          id={employee.info.seed}
-          key={employee.info.seed}
-          name={`${employee.results[0].name.first} ${employee.results[0].name.last}`}
-          image={employee.results[0].picture.large}
-          occupation={employee.job}
-          location={`${employee.results[0].location.street.number} ${employee.results[0].location.street.name}, ${employee.results[0].location.city}, ${employee.results[0].location.state}, ${employee.results[0].location.country}, ${employee.results[0].location.postcode}`}
-          phone={employee.results[0].phone}
-          email={employee.results[0].email}
-          city={employee.results[0].location.city}
-          country={employee.results[0].location.country}
-        />
-      ));
+      this.setState({ employees });
     }
   };
+  resetTheScreen = () => {
+    this.setState({ currentNavStatus: "" });
+    this.renderSortedEmployee("");
+  };
+  displayForm(type) {
+    if (type === "sort") {
+      return (
+        <SortForm
+          handleSortByChange={this.handleSortByChange}
+          renderSortedEmployee={this.renderSortedEmployee}
+        ></SortForm>
+      );
+    } else if (type === "filter") {
+      alert("hello");
+      return <SortForm></SortForm>;
+    }
+  }
   removeEmployee = (id) => {
     // Filter this.state.emmployees for employees with an id not equal to the id being removed
     const employees = this.state.employees.filter(
@@ -71,8 +75,9 @@ class App extends Component {
     return (
       <div>
         <Navbar
+          resetTheScreen={this.resetTheScreen}
           currentNavItem={this.state.currentNavItem}
-          handleNavItemChange={this.handleNavItemChange}
+          handleNavStatus={this.handleNavStatus}
         ></Navbar>
         {this.renderSearchSection()}
         <Wrapper>
