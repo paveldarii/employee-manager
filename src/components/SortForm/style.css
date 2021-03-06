@@ -1,0 +1,10 @@
+#sorting-buttons,
+h4 {
+  display: flex;
+  justify-content: center;
+  background: #eceff1;
+  margin: 0;
+}
+h4 {
+  color: black;
+}
