@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     employees: employees,
     currentNavStatus: "",
-    sortFormState: "",
+    filteredEmployees: [],
   };
 
   handleSortByChange = (sortItem) => {
@@ -49,19 +49,7 @@ class App extends Component {
     this.setState({ currentNavStatus: "" });
     this.renderSortedEmployee("");
   };
-  displayForm(type) {
-    if (type === "sort") {
-      return (
-        <SortForm
-          handleSortByChange={this.handleSortByChange}
-          renderSortedEmployee={this.renderSortedEmployee}
-        ></SortForm>
-      );
-    } else if (type === "filter") {
-      alert("hello");
-      return <SortForm></SortForm>;
-    }
-  }
+
   removeEmployee = (id) => {
     // Filter this.state.emmployees for employees with an id not equal to the id being removed
     const employees = this.state.employees.filter(
@@ -76,7 +64,6 @@ class App extends Component {
       <div>
         <Navbar
           resetTheScreen={this.resetTheScreen}
-          currentNavItem={this.state.currentNavItem}
           handleNavStatus={this.handleNavStatus}
         ></Navbar>
         {this.renderSearchSection()}
