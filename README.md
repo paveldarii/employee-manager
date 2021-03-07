@@ -16,19 +16,57 @@
 
 ## Description
 
-This app will allow employer or managers to view non-sensitive data about other employees
+Deployed Link: [https://paveldarii.github.io/employee-manager/](https://paveldarii.github.io/employee-manager/)
+
+This app will allow employer or managers to view non-sensitive data about other employees in their company.
+
+Technologies: Node, CSS, HTML, React, WebPack, Babel, Bootstrap, and other libraries.
 
 ## Installation
 
-true
+To instal the app follow next steps.
+
+1. Clone the app on your computer.
+
+```bash
+git clone git@github.com:paveldarii/employee-manager.git
+```
+
+2. Install all npm packages
+
+```bash
+npm i
+```
+
+3. Run the app
+
+```bash
+npm start
+```
+
+If you have any difficulties with installing the app, contact me on the email bellow.
 
 ## Usage
 
-true
+Being on the page you can directly start to look for the employee you need by going through the displayed list of all employee cards.
+
+![main page](screenshots/main.png)
+
+Next, this application will allow their users to sort employee list by age, experience, or age
+
+![main page](screenshots/sort.png)
+
+Also, users will be able to filter employee list by name, job, city, or country after selecting the filter option in the Nav Bar.
+
+![main page](screenshots/filter.png)
+
+Finally, if user found the employee he or she needs; then, they can learn more about the employee by pushing "More Info" button located on each card.
+
+![main page](screenshots/popUpCard.png)
 
 ## Contribution
 
-Contact me.
+I am open to any contributions, so if you want to be part of this project contact me on the email bellow. Thank you.
 
 ## Questions
 
