@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import logo from "./logo.png";
 
 function Navbar(props) {
   return (
@@ -7,34 +8,32 @@ function Navbar(props) {
       <div className="container-fluid">
         <img
           id="logo"
-          src="./logo.png"
+          src={logo}
           alt="logo"
           onClick={() => {
             props.resetTheScreen();
           }}
-        ></img>
+        />
 
         <div className=" justify-content-end" id="navbarNav">
-          <form class="form-inline">
-            <button
-              class="btn btn-sm btn-outline-secondary"
-              type="button"
-              onClick={() => {
-                props.handleNavStatus("sort");
-              }}
-            >
-              Sort
-            </button>
-            <button
-              class="btn btn-sm btn-outline-secondary"
-              onClick={() => {
-                props.handleNavStatus("filter");
-              }}
-              type="button"
-            >
-              Filter
-            </button>
-          </form>
+          <button
+            class="btn btn-sm btn-outline-secondary"
+            type="button"
+            onClick={() => {
+              props.handleNavStatus("sort");
+            }}
+          >
+            Sort
+          </button>
+          <button
+            class="btn btn-sm btn-outline-secondary"
+            onClick={() => {
+              props.handleNavStatus("filter");
+            }}
+            type="button"
+          >
+            Filter
+          </button>
         </div>
       </div>
     </nav>
