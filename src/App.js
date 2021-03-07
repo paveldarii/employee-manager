@@ -35,6 +35,7 @@ class App extends Component {
       return "";
     }
   };
+
   renderSortedEmployee = (sortItem) => {
     if (sortItem === "age") {
       employees.sort((a, b) =>
@@ -58,6 +59,7 @@ class App extends Component {
       this.setState({ employees: this.state.employeesCloned });
     }
   };
+
   resetTheScreen = () => {
     this.setState({ currentNavStatus: "" });
     this.renderSortedEmployee("");
@@ -71,6 +73,7 @@ class App extends Component {
     // Set this.state.employees equal to the new employees array
     this.setState({ employees });
   };
+
   // Map over this.state.employees and render a EmployeeCard component for each employee object
   render() {
     return (
