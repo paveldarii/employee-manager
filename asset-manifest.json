@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/employee-manager/static/css/main.82bbc52f.chunk.css",
-    "main.js": "/employee-manager/static/js/main.83f29fa2.chunk.js",
-    "main.js.map": "/employee-manager/static/js/main.83f29fa2.chunk.js.map",
+    "main.js": "/employee-manager/static/js/main.c80d82de.chunk.js",
+    "main.js.map": "/employee-manager/static/js/main.c80d82de.chunk.js.map",
     "runtime-main.js": "/employee-manager/static/js/runtime-main.53383880.js",
     "runtime-main.js.map": "/employee-manager/static/js/runtime-main.53383880.js.map",
     "static/css/2.150d169a.chunk.css": "/employee-manager/static/css/2.150d169a.chunk.css",
-    "static/js/2.1d24267f.chunk.js": "/employee-manager/static/js/2.1d24267f.chunk.js",
-    "static/js/2.1d24267f.chunk.js.map": "/employee-manager/static/js/2.1d24267f.chunk.js.map",
+    "static/js/2.dbbbe2ed.chunk.js": "/employee-manager/static/js/2.dbbbe2ed.chunk.js",
+    "static/js/2.dbbbe2ed.chunk.js.map": "/employee-manager/static/js/2.dbbbe2ed.chunk.js.map",
     "index.html": "/employee-manager/index.html",
     "static/css/2.150d169a.chunk.css.map": "/employee-manager/static/css/2.150d169a.chunk.css.map",
     "static/css/main.82bbc52f.chunk.css.map": "/employee-manager/static/css/main.82bbc52f.chunk.css.map",
-    "static/js/2.1d24267f.chunk.js.LICENSE.txt": "/employee-manager/static/js/2.1d24267f.chunk.js.LICENSE.txt"
+    "static/js/2.dbbbe2ed.chunk.js.LICENSE.txt": "/employee-manager/static/js/2.dbbbe2ed.chunk.js.LICENSE.txt",
+    "static/media/logo.c5c3ab10.png": "/employee-manager/static/media/logo.c5c3ab10.png"
   },
   "entrypoints": [
     "static/js/runtime-main.53383880.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.1d24267f.chunk.js",
+    "static/js/2.dbbbe2ed.chunk.js",
     "static/css/main.82bbc52f.chunk.css",
-    "static/js/main.83f29fa2.chunk.js"
+    "static/js/main.c80d82de.chunk.js"
   ]
 }
