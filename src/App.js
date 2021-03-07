@@ -81,6 +81,10 @@ class App extends Component {
               email={employee.results[0].email}
               city={employee.results[0].location.city}
               country={employee.results[0].location.country}
+              age={employee.results[0].dob.age}
+              experience={
+                employee.results[0].dob.age - employee.results[0].registered.age
+              }
             />
           ))}
         </Wrapper>
