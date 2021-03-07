@@ -18,6 +18,8 @@ function EmployeeCard(props) {
           <p>{`${props.city}, ${props.country}`}</p>
 
           <PupUpCard
+            age={props.age}
+            experience={Math.floor(props.experience / 6)}
             image={props.image}
             name={props.name}
             occupation={props.occupation}
