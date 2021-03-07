@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class App extends Component {
   // Setting this.state.employees to the employees json array
   state = {
+    employeesCloned: employees,
     employees: employees,
     currentNavStatus: "",
     filteredEmployees: [],
@@ -36,13 +37,25 @@ class App extends Component {
   };
   renderSortedEmployee = (sortItem) => {
     if (sortItem === "age") {
-      this.setState({ employees: employeesTest });
+      employees.sort((a, b) =>
+        a.results[0].dob.age > b.results[0].dob.age ? 1 : -1
+      );
+      this.setState({ employees: employees });
     } else if (sortItem === "experience") {
-      this.setState({ employees: employeesTest });
+      employees.sort((a, b) =>
+        a.results[0].dob.age - a.results[0].registered.age >
+        b.results[0].dob.age - b.results[0].registered.age
+          ? -1
+          : 1
+      );
+      this.setState({ employees: employees });
     } else if (sortItem === "name") {
-      this.setState({ employees: employeesTest });
+      employees.sort((a, b) =>
+        a.results[0].name.first > b.results[0].name.first ? 1 : -1
+      );
+      this.setState({ employees: employees });
     } else {
-      this.setState({ employees });
+      this.setState({ employees: this.state.employeesCloned });
     }
   };
   resetTheScreen = () => {
