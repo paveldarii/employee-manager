@@ -7,11 +7,17 @@ function FilterForm(props) {
       <input
         type="search"
         className="form-control rounded"
-        placeholder="Search Name"
+        placeholder="Search Name, Job, City, Country"
         aria-label="Search"
+        name="search"
         aria-describedby="search-addon"
+        onChange={props.handleInputChange}
       />
-      <button type="button" className="btn btn-outline-info">
+      <button
+        type="button"
+        className="btn btn-outline-info"
+        onClick={props.handleFormSubmit}
+      >
         search
       </button>
     </div>
