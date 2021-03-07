@@ -5,12 +5,12 @@ import Navbar from "./components/Navbar";
 import SortForm from "./components/SortForm";
 import FilterForm from "./components/FilterForm";
 import employees from "./new-employees.json";
-import employeesTest from "./employee-test.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
   state = {
+    search: "",
     employeesCloned: employees,
     employees: employees,
     currentNavStatus: "",
@@ -30,12 +30,51 @@ class App extends Component {
         <SortForm renderSortedEmployee={this.renderSortedEmployee}></SortForm>
       );
     } else if (this.state.currentNavStatus === "filter") {
-      return <FilterForm></FilterForm>;
+      return (
+        <FilterForm
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+        ></FilterForm>
+      );
     } else if (this.state.currentNavStatus === "") {
       return "";
     }
   };
 
+  // Filter Form Component onChange method //
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  // Filter Form Component onClick search method by name, job, city, country//
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    const employeesFiltered = this.state.employeesCloned.filter(
+      (employee) =>
+        employee.results[0].name.first
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase()) ||
+        employee.results[0].name.last
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase()) ||
+        employee.job.toLowerCase().includes(this.state.search.toLowerCase()) ||
+        employee.results[0].location.country
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase()) ||
+        employee.results[0].location.city
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase())
+    );
+    // Set this.state.employees equal to the new employees array
+    this.setState({ employees: employeesFiltered });
+  };
+
+  // Render employees on the screen depending on the sorting parameters
   renderSortedEmployee = (sortItem) => {
     if (sortItem === "age") {
       employees.sort((a, b) =>
