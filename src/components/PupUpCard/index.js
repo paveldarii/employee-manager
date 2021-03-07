@@ -92,6 +92,12 @@ export default function SpringModal(props) {
                 <strong>Job:</strong> {props.occupation}
               </li>
               <li className="list-group-item">
+                <strong>Age:</strong> {props.age}
+              </li>
+              <li className="list-group-item">
+                <strong>Experience:</strong> {props.experience}
+              </li>
+              <li className="list-group-item">
                 <strong>Phone Number:</strong> {props.phone}
               </li>
               <li className="list-group-item">
