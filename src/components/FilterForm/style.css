@@ -1,0 +1,12 @@
+.form-control {
+  margin-top: 5px;
+}
+.input-group {
+  width: 400px;
+  background: #eceff1;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  background-color: #eceff1;
+}
