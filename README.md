@@ -62,7 +62,7 @@ Also, users will be able to filter employee list by name, job, city, or country 
 
 Finally, if user found the employee he or she needs; then, they can learn more about the employee by pushing "More Info" button located on each card.
 
-![main page](screenshots/popUpCard.png)
+![main page](screenshots/pupUpCard.png)
 
 ## Contribution
 
